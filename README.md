@@ -22,3 +22,12 @@ python src/matcher.py < data/example1.in
 The verifier reads the matcher output from the pipe and validates it
 ```bash
 python src/matcher.py < data/example1.in | python src/verifier.py data/example1.in
+```
+
+### 3. Task C Solution
+To measure how our matcher and verifier scale with increasing problem size, we ran the matching algorithm and verifier on randomly generated inputs with the number of hospitals/students n = 1, 2, 4, 8, 16, 32, 64, 128, 256, 512. The blue line shows the matcher only, while the orange line shows matcher + verifier. The trend shows that both had a runtime complexity of O(n^2), this is because when n doubles, the runtime quadruples. This is as expected because there are n x n participants in the stable matching scenario. 
+![Scalibility Graph](experiments/partC_Graph.png)
+How to reproduce: 
+```bash
+python experiments\partC.py
+```
