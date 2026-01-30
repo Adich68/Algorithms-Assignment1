@@ -151,7 +151,6 @@ def main():
 
     n, hospital_prefs, student_prefs = read_input()
 
-    # Validate input format
     if not validate_input(n, hospital_prefs, student_prefs):
         print("INVALID INPUT", file=sys.stderr)
         sys.exit(1)
@@ -164,7 +163,7 @@ def main():
         print(str(h + 1) + " " + str(matching[h] + 1))
 
 
-# Ensures main() only runs when this file is executed directly
+
 if __name__ == "__main__":
     main()
     

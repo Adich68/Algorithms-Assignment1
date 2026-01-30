@@ -74,6 +74,15 @@ def check_validity(n, matching):
     if len(matching) != n:
         print(f"INVALID (Size mismatch: expected {n} matches, got {len(matching)})")
         return False
+    
+    for h, s in matching.items():
+        if not (0 <= h < n):
+            print(f"INVALID (Hospital {h+1} out of range)")
+            return False
+        if not (0 <= s < n):
+            print(f"INVALID (Student {s+1} out of range)")
+            return False
+
     return True
 
 

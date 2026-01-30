@@ -17,3 +17,11 @@ The matcher reads preference data from standard input (stdin).
 ```bash
 # Run with an example file(1 or 2)
 python src/matcher.py < data/example1.in
+
+### 2. Run the Verifier (Task B)
+The verifier reads the matcher output from the pipe and validates it
+```bash
+python src/matcher.py < data/single.in | python src/verifier.py data/single.in
+
+
+
