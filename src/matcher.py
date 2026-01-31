@@ -155,10 +155,8 @@ def main():
         print("INVALID INPUT", file=sys.stderr)
         sys.exit(1)
 
-    # Run the matching algorithm
     matching, _ = gale_shapley(n, hospital_prefs, student_prefs)
 
-    # Output the final matching (convert back to 1-based indexing)
     for h in range(n):
         print(str(h + 1) + " " + str(matching[h] + 1))
 
